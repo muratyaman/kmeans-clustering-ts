@@ -1,6 +1,6 @@
 {
-  "name": "k-means-clustering-ts",
-  "version": "1.0.0",
+  "name": "kmeans-clustering-ts",
+  "version": "1.0.1",
   "description": "K-Means clustering of multi-dimensional observations using TypeScript and Node",
   "main": "dist/index.js",
   "files": [
@@ -14,11 +14,19 @@
     "test": "mocha -r ts-node/register ./tests/**/*.test.ts",
     "test:coverage": "nyc npm run test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muratyaman/kmeans-clustering-ts.git"
+  },
   "keywords": [
     "kmeans",
     "cluster",
     "clustering"
   ],
+  "bugs": {
+    "url": "https://github.com/muratyaman/kmeans-clustering-ts/issues"
+  },
+  "homepage": "https://github.com/muratyaman/kmeans-clustering-ts#readme",
   "author": "Haci Murat Yaman",
   "license": "ISC",
   "devDependencies": {
