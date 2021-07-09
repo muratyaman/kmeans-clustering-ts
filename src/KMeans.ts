@@ -15,6 +15,7 @@ export class KMeans {
   constructor(
     protected k: number,
     data: number[][], // each row is an observation/point
+    initCentresUsingObservations = false,
   ) {
     if (data.length === 0) throw new Error('no observation data given');
 
@@ -24,8 +25,8 @@ export class KMeans {
 
     this.resetMappings();
 
-    // otherwise, centres are random points
-    this.initCentresUsingObservations();
+    // by default, centres are random points
+    if (initCentresUsingObservations) this.initCentresUsingObservations();
 
     this.assertK();
   }

@@ -1,6 +1,6 @@
 {
   "name": "kmeans-clustering-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "K-Means clustering of multi-dimensional observations using TypeScript and Node",
   "main": "dist/index.js",
   "files": [
@@ -10,7 +10,13 @@
     "build:ts": "tsc -b tsconfig.build.json",
     "build": "npm run clean && npm run build:ts",
     "clean": "rm -rf dist",
-    "sample1": "node ./bin/index.js ./samples/sample1.csv",
+    "sample1:10": "node ./bin/index.js -f ./samples/sample1.csv -k 2 -i 10",
+    "sample1:25": "node ./bin/index.js -f ./samples/sample1.csv -k 2 -i 25",
+    "sample1:100": "node ./bin/index.js -f ./samples/sample1.csv -k 2 -i 100",
+    "digits50:100": "node ./bin/index.js -f ./samples/train-50-normalized.csv -k 10 -i 100",
+    "digits50:1000": "node ./bin/index.js -f ./samples/train-50-normalized.csv -k 10 -i 1000",
+    "digits1000:50": "node ./bin/index.js -f ./samples/train-1000.csv -k 10 -i 50",
+    "digits1000:100": "node ./bin/index.js -f ./samples/train-1000.csv -k 10 -i 100",
     "test": "mocha -r ts-node/register ./tests/**/*.test.ts",
     "test:coverage": "nyc npm run test"
   },
@@ -38,5 +44,8 @@
     "nyc": "^15.1.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "commander": "^8.0.0"
   }
 }
